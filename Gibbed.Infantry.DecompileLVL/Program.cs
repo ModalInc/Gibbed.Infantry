@@ -348,14 +348,14 @@ namespace Gibbed.Infantry.DecompileLVL
                     Height = level.Height,
                     EntityCount = level.Entities.Count,
                     PhysicsLow = new short[32],
-                };
+                    PhysicsHigh = new short[32],
+            };
 
                 // not right? DERP
                 //header.OffsetX = level.OffsetX;
                 //header.OffsetY = level.OffsetY;
 
                 Array.Copy(level.PhysicsLow, header.PhysicsLow, level.PhysicsLow.Length);
-                header.PhysicsHigh = new short[32];
                 Array.Copy(level.PhysicsHigh, header.PhysicsHigh, level.PhysicsHigh.Length);
 
                 header.LightColorWhite = level.LightColorWhite;
